@@ -1,0 +1,11 @@
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 本地宣传图来源目录；公开版本使用 promo 中的语义化副本。
+/宣传图/
+
+# 安装包通过 GitHub Releases 分发，不直接提交到展示仓库。
+release/**/*.exe
+release/**/*.msi
+release/**/*.blockmap
