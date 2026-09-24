@@ -2,30 +2,29 @@
 
 ## 当前版本
 
-- 版本：`v0.2.0-rc.1`
-- 状态：Pre-release / Release Candidate
-- 平台：Windows x64
-- 文件：`Project-Spine-Setup-0.2.0-rc.1.exe`
-- 大小：`123,360,429 bytes`
-- SHA-256：`44C904089913C52FBB4351B80168C43C75DA66C18CE46C892887DBDCE0594973`
+- 候选版本：`v0.1.0-rc.1`
+- 支持平台：Windows x64
 
-[下载当前版本](https://github.com/vmn115632-cell/Project-Spine/releases/download/v0.2.0-rc.1/Project-Spine-Setup-0.2.0-rc.1.exe) · [查看 Release](https://github.com/vmn115632-cell/Project-Spine/releases/tag/v0.2.0-rc.1)
+## 下载方式
 
-安装包通过 GitHub Releases 分发，不直接提交到展示仓库。
+Project Spine 安装包将通过本仓库的 **Releases** 页面提供。本展示仓库不直接提交大型安装文件。
+
+GitHub Release 创建后，请在对应版本条目的 Assets 中下载：
+
+`Project-Spine-Setup-0.1.0-rc.1.exe`
+
+## Release 提供内容
+
+- Windows Installer；
+- Release Notes；
+- Known Issues；
+- 必要的版本与安装说明。
 
 ## 安装前请注意
 
-- 当前 Installer 尚未进行 Authenticode 代码签名，首次运行可能触发 Windows SmartScreen；
-- 请只从本仓库正式 Releases 页面下载；
-- 下载后建议核对 SHA-256；
-- 升级或迁移重要项目数据前，请保留独立备份；
-- 请阅读[安装说明](../docs/INSTALL_GUIDE.md)和[V0.2 Known Issues](../docs/KNOWN_ISSUES_PUBLIC_V0.2.md)。
+- 当前安装包未进行 Authenticode 代码签名，首次运行可能触发 Windows SmartScreen；
+- 请只从本仓库的正式 Releases 页面下载；
+- 请先阅读[安装说明](../docs/INSTALL_GUIDE.md)和[已知问题](../docs/KNOWN_ISSUES_PUBLIC_V0.1.md)；
+- 当前版本为本地优先、单用户应用，不包含云同步或团队协作。
 
-## 历史版本
-
-### v0.1.0-rc.1
-
-- 文件：`Project-Spine-Setup-0.1.0-rc.1.exe`
-- [查看历史 Release](https://github.com/vmn115632-cell/Project-Spine/releases/tag/v0.1.0-rc.1)
-
-历史 Release 保持不变。除非需要复现旧版本行为，建议下载当前 V0.2 Release Candidate。
+在 GitHub Release 正式创建前，下载入口将暂不可用。
