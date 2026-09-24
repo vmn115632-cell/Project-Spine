@@ -1,122 +1,134 @@
 # Project Spine
 
-**一个面向长期复杂项目的项目脉络管理工具。**
+**帮助长期项目保持结构、上下文与执行脉络的 Windows 桌面工具。**
 
-Project Spine 不是普通的 Todo 工具。它关注长期项目中的整体结构、当前节点和执行上下文，让用户在项目不断演化、工作多次中断后，仍能快速找回全局与当前位置。主界面负责结构编辑和整体查看，Mini 模式负责执行过程中的持续可见。
+Project Spine 不是另一张不断变长的待办清单。它把长期项目组织成可理解的脉络，让你随时看清当前在哪里、为什么在做这件事、下一步是什么，以及什么才算完成。
 
-![Project Spine 产品概览](promo/03-product-overview.png)
+当前公开版本：**v0.2.0-rc.1 · Pre-release / Release Candidate**
 
-_从项目全貌到当前节点，把长期项目放回清晰、可持续的结构中。_
+[下载 Windows 安装包](https://github.com/vmn115632-cell/Project-Spine/releases/download/v0.2.0-rc.1/Project-Spine-Setup-0.2.0-rc.1.exe) · [查看 Release](https://github.com/vmn115632-cell/Project-Spine/releases/tag/v0.2.0-rc.1)
 
-## Project Spine 解决什么问题
+SHA-256：`44C904089913C52FBB4351B80168C43C75DA66C18CE46C892887DBDCE0594973`
 
-长期项目往往不是缺少任务，而是逐渐失去脉络：
+![Project Spine V0.2 Mini Workspace](screenshots/v0.2-04-mini-workspace.png)
 
-- 聊天记录越积越多，最初的目标和约束散落在不同上下文中；
-- 文档不断变长，打开和维护它的成本越来越高；
-- 日常执行容易占据注意力，项目当前处于哪个阶段反而变得模糊；
-- 传统待办工具可以记录任务，却不擅长保留阶段、分支、决策和上下层关系。
+## 为什么需要 Project Spine
 
-Project Spine 的目标，是让项目结构、当前阶段、当前路径和关键节点始终保持可见，让规划、执行和恢复工作现场形成连续过程。
+长期项目的问题通常不是没有任务，而是随着时间推移逐渐失去：
+
+- 当前在哪里；
+- 为什么做这件事；
+- 下一步是什么；
+- 什么才算完成。
+
+聊天、文档和零散待办可以保存信息，却很难持续呈现项目的阶段、结构、决策和当前位置。Project Spine 让全局脉络与当前执行位置同时可见，帮助你在中断之后快速恢复工作现场。
 
 ## 核心能力
 
-- **项目中心**：查看项目、完成进度、当前节点和最近更新时间。
-- **项目脉络树**：用阶段、模块、任务和决策表达长期项目结构。
-- **节点详情**：记录目标、任务清单、关键产出、完成标准和备注。
-- **Blueprint 导入**：校验并预览结构化 JSON，一次建立项目骨架。
-- **Mini 模式**：在执行过程中让项目主脉络和当前位置常驻桌面。
-- **Mini Quick Actions**：在 Mini 中处理任务清单、状态和简短备注。
-- **Main / Mini 联动**：两个界面共享同一份项目数据，并保持选择和执行状态同步。
-- **SQLite 持久化**：保存项目数据、备份与恢复信息，以及常用界面状态。
+Project Spine 使用一条清晰的结构组织项目：
 
-## 界面预览
+```text
+Project
+└── Phase
+    └── Module
+        ├── Task
+        └── Decision
+```
 
-以下图片均来自 Project Spine 正式软件的实际运行界面。
+其中 **Current Node** 标记当前真正需要推进的位置。项目结构、节点目标、任务清单、关键产出、完成标准和备注共同构成可持续维护的执行上下文。
 
-### 项目中心
+## Mini Workspace
 
-![Project Spine 项目中心](screenshots/01-project-hub.png)
+V0.2 默认以 Mini 作为日常工作入口。它保留最需要持续关注的信息，同时避免把完整主界面一直占在桌面上。
 
-_集中查看项目进度、当前节点和最近更新时间。_
+- 查看当前项目、总体进度和项目主脉络；
+- 在多个项目之间快速切换；
+- 快速更新 Task 状态；
+- 查看并追加 Quick Note；
+- 置顶、最小化或关闭 Mini；
+- 随时切换到 Main 进行深度编辑。
 
-### 主工作区
+![Project Spine Mini 项目脉络](screenshots/v0.2-04-mini-workspace.png)
 
-![Project Spine 主工作区](screenshots/02-main-overview.png)
+![Project Spine Mini 快速操作](screenshots/v0.2-05-task-quick-actions.png)
 
-_在同一界面中查看项目脉络，并维护节点详情。_
+## Main Workspace
 
-### Mini 项目脉络
+Main 负责完整项目维护：查看和调整项目结构，编辑 Node Detail，在树形视图与 Canvas 之间切换，以及导入 Blueprint。
 
-![Project Spine Mini 模式](screenshots/04-mini-overview.png)
+![Project Spine Main Workspace](screenshots/v0.2-03-main-workspace.png)
 
-_保留阶段主脊柱、当前路径和正在执行的节点。_
+项目中心集中展示项目进度、当前节点和最近更新时间。
 
-### Blueprint 导入
+![Project Spine 项目中心](screenshots/v0.2-01-project-hub.png)
 
-![Project Spine Blueprint 导入](screenshots/06-blueprint-import.png)
+## AI Blueprint Generation
 
-_导入前完成结构校验和预览，再创建正式项目。_
+Project Spine 支持让 AI 根据正式规范生成可导入的项目 Blueprint：
 
-## Mini 模式
+```text
+用户项目需求
+↓
+AI 读取 Project Spine Blueprint Specification
+↓
+生成 Blueprint JSON
+↓
+Project Spine 校验 / 预览
+↓
+导入项目
+↓
+开始执行
+```
 
-Mini 是为长期执行准备的常驻项目脉络窗口。它不会把主界面简单缩小，而是保留最需要持续关注的信息：项目进度、阶段主线、当前路径和当前节点。
+Blueprint Schema 在 V0.2 中仍为 **0.1**。
 
-用户无需频繁切回主界面，也能知道项目正处于哪个阶段、当前工作与上层结构如何连接。需要维护完整结构和详细内容时回到 Main；进入专注执行后，让 Mini 留在桌面侧边。
+1. 阅读 [AI Blueprint 模板说明](templates/README.md)；
+2. 将 [AI Blueprint 生成规范](templates/Project_Spine_AI_Blueprint_Generation_Specification_V0.1.md) 与项目需求交给 AI；
+3. 使用 [Blueprint JSON 模板](templates/Blueprint_Template_V0.1.json) 生成合法 JSON；
+4. 参考 [公开示例 Blueprint](templates/examples/Example_Project_Blueprint.json)；
+5. 在 Project Spine 中校验、预览并导入。
 
-![Project Spine Mini 模式介绍](promo/01-mini-mode.png)
+AI 可以协助拆解项目结构，项目边界、节点状态和当前执行位置仍应由用户确认。
 
-## 从 Blueprint 到长期执行
+![Project Spine Blueprint 校验与预览](screenshots/v0.2-02-blueprint-import.png)
 
-Project Spine 将项目从初始结构带入持续执行：
+## What's New in V0.2
 
-1. 导入并校验 Blueprint；
-2. 建立阶段清晰的项目脉络；
-3. 设置唯一的当前节点；
-4. 在 Main 中编辑结构和节点详情；
-5. 在 Mini 中持续查看并推进当前工作；
-6. 关闭和重新启动后，恢复项目数据与工作现场。
+1. Mini 成为默认工作入口；
+2. Mini 项目快速切换；
+3. Task 状态快速更新；
+4. Mini 窗口控制与生命周期优化；
+5. 项目删除；
+6. 自定义软件安装位置；
+7. 自定义业务数据位置；
+8. 数据目录迁移；
+9. 针对较大项目优化状态更新与界面渲染，显著减少 Mini 操作时的卡顿；
+10. 改善 Windows 窗口恢复与稳定性。
 
-![从 Blueprint 到长期执行](promo/04-blueprint-to-execution.png)
+## Download
 
-## 当前版本
+- 版本：`v0.2.0-rc.1`
+- 平台：Windows x64
+- 状态：Pre-release / Release Candidate
+- 文件：`Project-Spine-Setup-0.2.0-rc.1.exe`
+- 大小：`123,360,429 bytes`
+- SHA-256：`44C904089913C52FBB4351B80168C43C75DA66C18CE46C892887DBDCE0594973`
 
-当前公开候选版本为 **v0.1.0-rc.1**，面向 Windows x64。
+[下载 Project Spine v0.2.0-rc.1](https://github.com/vmn115632-cell/Project-Spine/releases/download/v0.2.0-rc.1/Project-Spine-Setup-0.2.0-rc.1.exe)
 
-该版本已经具备可安装、可导入、可持久化和可用于真实长期项目的基础能力。目前仍有少量非阻塞限制，包括未签名的 Windows 安装包，以及大型项目在 Canvas 初始总览时文字较小。
+当前 Installer 尚未进行代码签名，Windows SmartScreen 可能显示安全提示。请只从本仓库的正式 Releases 页面下载，并在安装前核对版本、文件名和 SHA-256。
 
-- [查看 Release Notes](docs/RELEASE_NOTES_PUBLIC_V0.1.md)
-- [查看已知问题](docs/KNOWN_ISSUES_PUBLIC_V0.1.md)
+## 文档
 
-## 安装与下载
-
-Project Spine 当前提供 Windows x64 版本，安装包将通过本仓库的 **Releases** 页面发布。
-
-当前安装包未进行 Authenticode 代码签名，Windows SmartScreen 可能显示“未知发布者”或要求额外确认。首次安装前，请确认文件来自本仓库的正式 Releases 页面，并阅读安装说明。
-
+- [V0.2 产品概览](docs/PRODUCT_OVERVIEW_PUBLIC_V0.2.md)
+- [V0.2 Release Notes](docs/RELEASE_NOTES_PUBLIC_V0.2.md)
+- [V0.2 Known Issues](docs/KNOWN_ISSUES_PUBLIC_V0.2.md)
 - [安装说明](docs/INSTALL_GUIDE.md)
 - [下载说明](release/DOWNLOAD_INFO.md)
+- [V0.1 历史 Release Notes](docs/RELEASE_NOTES_PUBLIC_V0.1.md)
 
 ## 仓库说明
 
-这是 Project Spine 的公开产品展示仓库，包含：
+这是 Project Spine 的公开产品展示仓库，包含产品介绍、公开截图、安装说明、Release Notes、Known Issues 和 AI Blueprint 模板。
 
-- 产品介绍；
-- 宣传图与真实软件截图；
-- 安装和下载说明；
-- Release Notes；
-- Known Issues。
-
-**本仓库不包含 Project Spine 源码，源码未公开上传。**
-
-## 相关文档
-
-- [产品概览](docs/PRODUCT_OVERVIEW_PUBLIC_V0.1.md)
-- [安装说明](docs/INSTALL_GUIDE.md)
-- [Release Notes](docs/RELEASE_NOTES_PUBLIC_V0.1.md)
-- [Known Issues](docs/KNOWN_ISSUES_PUBLIC_V0.1.md)
-- [下载说明](release/DOWNLOAD_INFO.md)
-
-## 说明
-
-Project Spine 当前是一个面向个人长期复杂项目的 Windows 桌面应用。后续工作将继续聚焦真实使用中的清晰度、稳定性和长期执行体验。
+**本仓库不包含 Project Spine 源码。**

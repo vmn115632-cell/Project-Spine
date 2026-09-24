@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "0.1",
+  "project": {
+    "name": "请填写项目名称",
+    "description": "请填写项目目标、范围与预期成果"
+  },
+  "nodes": [
+    {
+      "id": "phase-1",
+      "title": "请填写阶段名称",
+      "type": "phase",
+      "goal": "请填写本阶段需要达成的目标",
+      "children": [
+        {
+          "id": "module-1-1",
+          "title": "请填写模块名称",
+          "type": "module",
+          "goal": "请填写该模块解决的问题",
+          "children": [
+            {
+              "id": "task-1-1-1",
+              "title": "请填写可执行任务名称",
+              "type": "task",
+              "goal": "请填写任务完成后应达到的结果",
+              "status": "doing",
+              "tasks": [
+                {
+                  "title": "请填写检查项",
+                  "isCompleted": false
+                }
+              ],
+              "outputs": [
+                "请填写预期产出"
+              ],
+              "definitionOfDone": "请填写可验证的完成标准",
+              "notes": "请填写执行所需的简短上下文；没有备注时可使用空字符串",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

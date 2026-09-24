@@ -1,0 +1,216 @@
+{
+  "schemaVersion": "0.1",
+  "project": {
+    "name": "个人知识库建设项目",
+    "description": "建立一套可持续维护的个人知识库，用于收集、整理和复用学习与工作中的关键信息。"
+  },
+  "nodes": [
+    {
+      "id": "phase-foundation",
+      "title": "明确知识库基础",
+      "type": "phase",
+      "goal": "确定知识库的使用目标、信息边界与基础组织方式。",
+      "children": [
+        {
+          "id": "module-requirements",
+          "title": "需求与边界",
+          "type": "module",
+          "goal": "明确需要解决的问题以及第一版不处理的内容。",
+          "children": [
+            {
+              "id": "task-audit-sources",
+              "title": "盘点现有信息来源",
+              "type": "task",
+              "goal": "列出当前使用的笔记、文档和收藏来源。",
+              "status": "done",
+              "tasks": [
+                {
+                  "title": "列出常用信息来源",
+                  "isCompleted": true
+                },
+                {
+                  "title": "标记重复或废弃来源",
+                  "isCompleted": true
+                }
+              ],
+              "outputs": [
+                "信息来源清单"
+              ],
+              "definitionOfDone": "所有常用信息来源均已列出，并标明保留或迁移策略。",
+              "notes": "优先覆盖最近三个月仍在使用的来源。",
+              "children": []
+            },
+            {
+              "id": "task-define-scope",
+              "title": "定义第一版范围",
+              "type": "task",
+              "goal": "确定第一版知识库需要承载的内容类型。",
+              "status": "done",
+              "tasks": [
+                {
+                  "title": "确定纳入的内容类型",
+                  "isCompleted": true
+                },
+                {
+                  "title": "记录暂不处理的内容",
+                  "isCompleted": true
+                }
+              ],
+              "outputs": [
+                "第一版范围说明"
+              ],
+              "definitionOfDone": "范围说明能够指导后续结构设计，且没有明显歧义。",
+              "notes": "第一版只覆盖学习笔记、项目资料和长期参考内容。",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phase-structure",
+      "title": "设计并建立结构",
+      "type": "phase",
+      "goal": "建立清晰、可维护且不会过度复杂的知识组织结构。",
+      "children": [
+        {
+          "id": "module-taxonomy",
+          "title": "分类与命名体系",
+          "type": "module",
+          "goal": "形成统一的目录、标签和命名规则。",
+          "children": [
+            {
+              "id": "task-design-taxonomy",
+              "title": "设计分类结构",
+              "type": "task",
+              "goal": "建立能够覆盖当前核心内容的分类结构。",
+              "status": "doing",
+              "tasks": [
+                {
+                  "title": "定义一级分类",
+                  "isCompleted": true
+                },
+                {
+                  "title": "验证典型内容的归属",
+                  "isCompleted": false
+                },
+                {
+                  "title": "记录命名约定",
+                  "isCompleted": false
+                }
+              ],
+              "outputs": [
+                "知识库分类结构",
+                "命名约定"
+              ],
+              "definitionOfDone": "至少十条典型内容可以无歧义地放入结构中。",
+              "notes": "避免创建只有一条内容的长期分类。",
+              "children": []
+            },
+            {
+              "id": "task-create-skeleton",
+              "title": "建立知识库骨架",
+              "type": "task",
+              "goal": "按照确认的结构创建第一版知识库。",
+              "status": "todo",
+              "tasks": [
+                {
+                  "title": "创建一级分类",
+                  "isCompleted": false
+                },
+                {
+                  "title": "创建常用页面入口",
+                  "isCompleted": false
+                }
+              ],
+              "outputs": [
+                "可使用的知识库骨架"
+              ],
+              "definitionOfDone": "核心分类和常用入口已经建立，可以开始迁移内容。",
+              "notes": "结构以够用为准，不在此阶段处理视觉美化。",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phase-migration",
+      "title": "迁移与整理内容",
+      "type": "phase",
+      "goal": "将高价值内容迁移到新结构，并清理明显重复信息。",
+      "children": [
+        {
+          "id": "module-content-migration",
+          "title": "核心内容迁移",
+          "type": "module",
+          "goal": "优先迁移仍会持续使用的内容。",
+          "children": [
+            {
+              "id": "task-migrate-active",
+              "title": "迁移活跃内容",
+              "type": "task",
+              "goal": "完成近期仍在使用的学习与项目资料迁移。",
+              "status": "todo",
+              "tasks": [
+                {
+                  "title": "迁移进行中的项目资料",
+                  "isCompleted": false
+                },
+                {
+                  "title": "迁移近期学习笔记",
+                  "isCompleted": false
+                }
+              ],
+              "outputs": [
+                "已迁移的活跃内容"
+              ],
+              "definitionOfDone": "日常工作所需的活跃内容均可从新知识库访问。",
+              "notes": "低价值历史内容暂不迁移。",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phase-maintenance",
+      "title": "建立维护机制",
+      "type": "phase",
+      "goal": "形成低成本的日常整理和定期复查习惯。",
+      "children": [
+        {
+          "id": "module-review-routine",
+          "title": "回顾与维护流程",
+          "type": "module",
+          "goal": "定义知识库长期维护所需的最小流程。",
+          "children": [
+            {
+              "id": "task-weekly-review",
+              "title": "建立每周回顾流程",
+              "type": "task",
+              "goal": "通过固定回顾处理临时内容并修正结构问题。",
+              "status": "todo",
+              "tasks": [
+                {
+                  "title": "定义回顾清单",
+                  "isCompleted": false
+                },
+                {
+                  "title": "安排首次回顾",
+                  "isCompleted": false
+                }
+              ],
+              "outputs": [
+                "每周回顾清单"
+              ],
+              "definitionOfDone": "回顾流程可在三十分钟内完成，并覆盖收件箱与活跃项目。",
+              "notes": "连续执行四周后再决定是否调整频率。",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
